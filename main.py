@@ -1,4 +1,12 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+
+class DataModel(BaseModel):
+    data: str
+
 
 app = FastAPI()
 
@@ -49,15 +57,15 @@ async def only_chars(data: str):
 
 
 @app.post("/only_digit/")
-async def only_digit(data: str):
+async def only_digit(data: DataModel):
     return await remove_non_digits(data)
 
 
 @app.post("/only_words/")
-async def only_words(data: str):
+async def only_words(data: DataModel):
     return await remove_non_letters(data)
 
 
 @app.post("/only_chars/")
-async def only_chars(data: str):
+async def only_chars(data: DataModel):
     return await remove_letters_and_digits(data)
