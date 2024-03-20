@@ -48,16 +48,16 @@ async def only_chars(data: str):
     return await remove_letters_and_digits(data)
 
 
-@app.post("/only_digit/{data}")
+@app.post("/only_digit/")
 async def only_digit(data: str):
     return await remove_non_digits(data)
 
 
-@app.post("/only_words/{data}")
+@app.post("/only_words/")
 async def only_words(data: str):
     return await remove_non_letters(data)
 
 
-@app.post("/only_chars/{data}")
+@app.post("/only_chars/")
 async def only_chars(data: str):
     return await remove_letters_and_digits(data)
