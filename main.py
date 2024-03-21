@@ -41,17 +41,17 @@ async def remove_letters_and_digits(input_string):
     return symbols_only
 
 
-@app.get("/only_digit/{data}")
+@app.get("/only_digit/")
 async def only_digit(data: str):
     return await remove_non_digits(data)
 
 
-@app.get("/only_words/{data}")
+@app.get("/only_words/")
 async def only_words(data: str):
     return await remove_non_letters(data)
 
 
-@app.get("/only_chars/{data}")
+@app.get("/only_chars/")
 async def only_chars(data: str):
     return await remove_letters_and_digits(data)
 
