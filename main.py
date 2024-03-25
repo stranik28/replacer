@@ -46,7 +46,7 @@ async def only_digit(data: str):
     answ = await remove_non_digits(data)
     return {
         "CODE": "200",
-        "STATUS": answ
+        "STATUS": int(answ)
     }
 
 
@@ -73,7 +73,7 @@ async def only_digit(data: str):
     answ = await remove_non_digits(data)
     return {
         "CODE": "200",
-        "STATUS": answ
+        "STATUS": int(answ)
     }
 
 
