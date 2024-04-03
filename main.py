@@ -44,52 +44,82 @@ async def remove_letters_and_digits(input_string):
 @app.get("/only_digit/")
 async def only_digit(data: str):
     answ = await remove_non_digits(data)
-    return {
-        "CODE": "200",
-        "STATUS": int(answ)
-    }
+    try:
+        return {
+            "CODE": "200",
+            "STATUS": int(answ)
+        }
+    except:
+        return {
+            "CODE": 100
+        }
 
 
 @app.get("/only_words/")
 async def only_words(data: str):
     answ = await remove_non_letters(data)
-    return {
-        "CODE": "200",
-        "STATUS": answ
-    }
+    try:
+        return {
+            "CODE": "200",
+            "STATUS": answ
+        }
+    except:
+        return {
+            "CODE": 100
+        }
 
 
 @app.get("/only_chars/")
 async def only_chars(data: str):
     answ = await remove_letters_and_digits(data)
-    return {
-        "CODE": "200",
-        "STATUS": answ
-    }
+    try:
+        return {
+            "CODE": "200",
+            "STATUS": answ
+        }
+    except:
+        return {
+            "CODE": 100
+        }
 
 
 @app.post("/only_digit/")
 async def only_digit(data: str):
     answ = await remove_non_digits(data)
-    return {
-        "CODE": "200",
-        "STATUS": int(answ)
-    }
+    try:
+        return {
+            "CODE": "200",
+            "STATUS": int(answ)
+        }
+    except:
+        return {
+            "CODE": 100
+        }
 
 
 @app.post("/only_words/")
 async def only_words(data: str):
     answ = await remove_non_letters(data)
-    return {
-        "CODE": "200",
-        "STATUS": answ
-    }
+    try:
+        return {
+            "CODE": "200",
+            "STATUS": answ
+        }
+    except:
+        return {
+            "CODE": 100
+        }
 
 
 @app.post("/only_chars/")
 async def only_chars(data: str):
     answ = await remove_letters_and_digits(data)
-    return {
-        "CODE": "200",
-        "STATUS": answ
-    }
+    try:
+        return {
+            "CODE": "200",
+            "STATUS": answ
+        }
+    except:
+        return {
+            "CODE": 100
+        }
